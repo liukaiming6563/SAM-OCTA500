@@ -1,0 +1,53 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# IDE and system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Large archives and dataset artifacts
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.mat
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.nii
+*.nii.gz
+*.bmp
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.csv
+*.log
+
+# Local outputs and checkpoints
+outputs/
+checkpoints/
+runs/
+wandb/
+mlruns/
+*.pth
+*.pt
+*.ckpt
+
+# Keep all local dataset files outside this repository.
+/Data/
+/data/
+/datasets/

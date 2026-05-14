@@ -1,0 +1,6 @@
+model_name: SAM-OCTA500
+backbone: placeholder
+input_channels: 3
+num_classes: 1
+image_size: null
+checkpoint_path: null

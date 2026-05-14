@@ -1,0 +1,45 @@
+project_root: D:\study\project\SAM-OCTA500
+data_root: D:\study\project\Data\DataSet\OCTA500
+zip_root: D:\study\project\Data\DataSet\OCTA500\zip_original
+raw_root: D:\study\project\Data\DataSet\OCTA500\raw
+processed_root: D:\study\project\Data\DataSet\OCTA500\processed
+output_root: D:\study\project\Data\DataSet\OCTA500\outputs
+manifest_dir: D:\study\project\Data\DataSet\OCTA500\outputs\manifest
+report_dir: D:\study\project\Data\DataSet\OCTA500\outputs\reports
+visualization_dir: D:\study\project\Data\DataSet\OCTA500\outputs\visualizations
+log_dir: D:\study\project\Data\DataSet\OCTA500\outputs\logs
+config_snapshot_dir: D:\study\project\Data\DataSet\OCTA500\outputs\config_snapshots
+github_repo: https://github.com/liukaiming6563/SAM-OCTA500
+
+random_seed: 2026
+allow_overwrite: false
+visualize_num_samples: 20
+
+fov: 3M
+task: FAZ
+image_type: FULL
+# raw 扫描显示 "full" 会同时匹配 OCT(FULL) 和 OCTA(FULL)，因此使用更精确的 OCTA(FULL) 关键词。
+input_keywords: ["octa(full)"]
+mask_keywords: ["gt_faz"]
+
+split_rules:
+  3M:
+    train: 10301-10440
+    val: 10441-10450
+    test: 10451-10500
+  6M:
+    train: 10001-10180
+    val: 10181-10200
+    test: 10201-10300
+
+task_keywords:
+  FAZ: ["gt_faz"]
+  LargeVessel: ["gt_largevessel", "largevessel", "large_vessel"]
+  Capillary: ["gt_capillary", "capillary"]
+  Artery: ["gt_artery", "artery"]
+  Vein: ["gt_vein", "vein"]
+
+image_keywords:
+  FULL: ["full"]
+  ILM_OPL: ["ilm_opl", "ilm-opl"]
+  OPL_BM: ["opl_bm", "opl-bm"]

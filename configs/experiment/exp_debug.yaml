@@ -1,0 +1,9 @@
+experiment_name: debug_3M_FAZ
+data_config: configs/data/octa500_prepare.yaml
+model_config: configs/model/sam_octa500.yaml
+split: train
+batch_size: 2
+num_workers: 0
+epochs: 1
+learning_rate: 0.0001
+random_seed: 2026
