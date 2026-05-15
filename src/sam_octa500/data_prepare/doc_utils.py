@@ -58,7 +58,10 @@ def generate_documents(config: dict[str, Any]) -> dict[str, Any]:
     docs_dir.mkdir(parents=True, exist_ok=True)
     zip_dir, zip_note = resolve_zip_root(config)
     raw_report = _load_json(report_dir / "raw_structure_report.json")
-    check_report = _load_json(report_dir / "processed_check_report.json")
+    task_report_path = report_dir / f"processed_check_report_{config['fov']}_{config['task']}.json"
+    check_report = _load_json(task_report_path)
+    if not check_report:
+        check_report = _load_json(report_dir / "processed_check_report.json")
     task_dir = processed_task_dir(config)
     meta_path = task_dir / "meta.csv"
     split_counts = _count_meta(meta_path)
